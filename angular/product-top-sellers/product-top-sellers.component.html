@@ -1,0 +1,84 @@
+<div class="row mx-0 mb-3 mb-lg-4 pb-lg-4 top-5-retailers-container">
+    <div class="col-12 px-0" *ngIf="loading">
+        <p-progressBar *ngIf="loading" mode="indeterminate" [style]="{'height': '6px', 'margin-top': '10px'}">
+        </p-progressBar>
+    </div>
+    <div *ngIf="!loading && list && list.length > 0" class="col-12 px-0">
+        <div class="row mx-0 verticle-align-items mb-4">
+            <div class="col-12 px-0 top-5-retailers-header-column">
+                <h4 class="dashboard-graphic-heading campton-family">Top 5 Retailers <label
+                        [ngClass]="tooltipDeviceStatus ? 'closeTabletTooltip' : ''" (click)="clickTooltipMobileShow()"
+                        pTooltip="The top 5 retail locations in terms of sales performance for the products you have listed on Producer Connect.  Sales Performance is the total sales volume on your products in the selected time period.  The retail location pool only includes stores that have POS integration with Cannametrics."
+                        tooltipPosition="top"></label>
+                </h4>
+                <p class="font-12 font-300 campton-family mb-0 ml-2"><span>Powered by</span> <img class="mx-2"
+                        src="assets/images/Logo_GreenlinePOS.png" height="20" /> <span>+</span> <img class="ml-2"
+                        src="assets/images/Logo_COVA.png" height="16" />
+                </p>
+                <p class="mb-0 font-300 campton-family font-12 float-right mt-3 mt-md-0">
+                    <span class="float-right" [ngClass]="{'lbl-product-brand-color': showSales}">Units</span>
+                    <p-inputSwitch [(ngModel)]="showSales" (onChange)="handleChangeReports($event)" class="float-right units-switch-custom mx-2">
+                    </p-inputSwitch>
+                    <span class="float-right" [ngClass]="{'lbl-product-brand-color': !showSales}">Sales</span>
+                </p>
+            </div>
+        </div>
+        <div class="row mx-0 verticle-align-items tooltip-row-mobile tooltip-row-mobile-no-padding no-margin-right-tooltip show-only-mobile"
+            [ngClass]="tooltipDeviceStatus ? '' : 'hideOverTablet'">
+            <div class="col-1 pl-0 pr-3 text-right">
+                <img src="../../../assets/images/info-icon-dashboard-green.svg" />
+            </div>
+            <div class="col-11 pl-3 pr-0 tooltip-mobile-right-column">
+                <p class="font-300 font-14 campton-family">The top 5 retail locations in terms of sales performance for
+                    the products you have listed on Producer Connect. Sales Performance is the total sales volume on
+                    your products in the selected time period. The retail location pool only includes stores that have
+                    POS integration with Cannametrics.</p>
+            </div>
+        </div>
+        <div class="row mx-0 mt-4">
+            <div class="col-12 px-0 mt-4 pt-2">
+                <div class="row" *ngIf="list && !loading">
+                    <div class="col-xs-5ths card-item-small px-3 pb-3 text-center" *ngFor="let p of list">
+                        <div class="col-12 card-item-small-container">
+                            <p class="card-item-small-image">
+                                <img *ngIf="p.ImageUrl" [src]="getUrl(p.ImageUrl)" />
+                                <img *ngIf="!p.ImageUrl" src="../../../assets/images/product-data-leaf.svg" />
+                            </p>
+                            <div class="top-retailers-card-item-small-content-height">
+                                <p class="card-item-small-brand font-15 semibold mb-2">{{p.Name}}</p>
+                                <p class="card-item-small-name font-12 font-300">{{p.LocationFull}}</p>
+                            </div>
+                            <p *ngIf="!showSales" class="card-item-small-type font-16 font-300 text-center mb-2">
+                                {{p.SalesValue | currency}}
+                            </p>
+                            <p *ngIf="showSales" class="card-item-small-type font-16 font-300 text-center mb-2">
+                                {{p.Unit }} Units
+                            </p>
+                            <p class="card-item-small-performance font-10 semibold mb-0"
+                                *ngIf="selectedPeriodId != '0/0'">Product
+                                Performance</p>
+                            <div *ngIf="!showSales">
+                                <p class="lblDashboardDifferenceMonth"
+                                    *ngIf="p.PreviousMonthDifference != 0 && selectedPeriodId != '0/0'"
+                                    [ngClass]="p.PreviousMonthDifference >= 0 ? 'lblPositiveDifference' : 'lblNegativeDifference'">
+                                    {{p.PreviousMonthDifference | number : '1.0-0'}}%</p>
+                                <p class="font-8 font-300 mt-1"
+                                    *ngIf="p.PreviousMonthDifference == 0 && selectedPeriodId != '0/0'">
+                                    Not enough data for comparison</p>
+                            </div>
+                            <div *ngIf="showSales">
+                                <p class="lblDashboardDifferenceMonth"
+                                    *ngIf="p.PreviousMonthDifferenceUnit != 0 && selectedPeriodId != '0/0'"
+                                    [ngClass]="p.PreviousMonthDifferenceUnit >= 0 ? 'lblPositiveDifference' : 'lblNegativeDifference'">
+                                    {{p.PreviousMonthDifferenceUnit | number : '1.0-0'}}%</p>
+                                <p class="font-8 font-300 mt-1"
+                                    *ngIf="p.PreviousMonthDifferenceUnit == 0 && selectedPeriodId != '0/0'">
+                                    Not enough data for comparison</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

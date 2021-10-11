@@ -1,0 +1,10 @@
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\bin\Debug\netcoreapp3.1\AnalyticsDomain.deps.json
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\bin\Debug\netcoreapp3.1\AnalyticsDomain.dll
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\bin\Debug\netcoreapp3.1\AnalyticsDomain.pdb
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\obj\Debug\netcoreapp3.1\AnalyticsDomain.AssemblyInfoInputs.cache
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\obj\Debug\netcoreapp3.1\AnalyticsDomain.AssemblyInfo.cs
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\obj\Debug\netcoreapp3.1\AnalyticsDomain.csproj.CoreCompileInputs.cache
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\obj\Debug\netcoreapp3.1\AnalyticsDomain.dll
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\obj\Debug\netcoreapp3.1\AnalyticsDomain.pdb
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\obj\Debug\netcoreapp3.1\AnalyticsDomain.csproj.AssemblyReference.cache
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\obj\Debug\netcoreapp3.1\AnalyticsDomain.GeneratedMSBuildEditorConfig.editorconfig

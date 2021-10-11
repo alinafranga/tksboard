@@ -1,0 +1,54 @@
+<div class="row mx-0 verticle-align-items mt-4 mt-lg-0">
+    <div class="col-12 px-0">
+        <ul class="dashboard-tabs-list">
+            <li>
+                <h3 class="dashboard-overview-heading campton-family" [ngClass]="{'active': checkTab()==1}"
+                    (click)="goTab('overview',0);">
+                    Overview</h3>
+            </li>
+            <li *ngIf="isAdmin">
+                <h3 class="dashboard-overview-heading campton-family" [ngClass]="{'active': checkTab()==2}"
+                    (click)="goTab('product',0);">
+                    Product Data</h3>
+            </li>
+        </ul>
+    </div>
+</div>
+<div *ngIf="checkTab() == 1">
+    <app-producer-gr-header [userId]="userId" [provinceId]="provinceId">
+    </app-producer-gr-header>
+    <div class="row mx-0 verticle-align-items mb-4 pt-3">
+        <div class="col-12 col-md-8 col-lg-10 px-0">
+            <h3 class="inner-header-notification">Overview</h3>
+        </div>
+        <div class="col-12 col-md-4 col-lg-2 px-0 text-left text-md-right mt-3 mt-md-0">
+            <p-dropdown [options]="timeList"
+                class="full-width-multiselect custom-ddl-filter custom-ddl-dashboard custom-date-ddl"
+                [(ngModel)]="selectedPeriod" [group]="false" (onChange)="onTimeChange($event)">
+                <ng-template let-group pTemplate="item">
+                    <span>{{group.label}}</span>
+                </ng-template>
+            </p-dropdown>
+        </div>
+    </div>
+    <app-producer-gr-overview-header [userId]="userId" [showEverything]="showEverything" [provinceId]="provinceId"
+        [date]="selectedPeriod">
+    </app-producer-gr-overview-header>
+    <app-top-retailers-sellers [userId]="userId" [provinceId]="provinceId" [date]="selectedPeriod">
+    </app-top-retailers-sellers>
+    <app-producer-gr-impressions [userId]="userId" [provinceId]="provinceId" [time]="selectedPeriod"
+        [dateSelected]="selectedPeriodDisplay"></app-producer-gr-impressions>
+    <app-producer-gr-views [userId]="userId" [provinceId]="provinceId" [time]="selectedPeriod"
+        [dateSelected]="selectedPeriodDisplay"></app-producer-gr-views>
+    <app-producer-gr-lists [userId]="userId" [provinceId]="provinceId" [time]="selectedPeriod"
+        [dateSelected]="selectedPeriodDisplay"></app-producer-gr-lists>
+    <app-producer-gr-follows [userId]="userId" [provinceId]="provinceId" [showEverything]="showEverything"
+        [time]="selectedPeriod" [dateSelected]="selectedPeriodDisplay"></app-producer-gr-follows>
+    <app-gr-more-info></app-gr-more-info>
+</div>
+<div *ngIf="checkTab() == 2">
+    <div class="col-12 px-0 mb-5 pointer-items-inside">
+        <app-producer-gr-product [userId]="userId" [selectedWeedId]="selectedWeedId" [provinceId]="provinceId">
+        </app-producer-gr-product>
+    </div>
+</div>

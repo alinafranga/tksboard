@@ -1,0 +1,51 @@
+<div *ngIf="!selectedWeedId || selectedWeedId == 0"
+    class="row mx-0 verticle-align-items mb-3 pb-2 mt-4 mt-lg-0 similar-products-header">
+    <div class="col-12 px-0">
+        <h4 class="dashboard-graphic-heading campton-family d-block">
+            <p class="mb-0 d-inline-block">Product Data <span>{{nrProducts}} Products</span></p>
+        </h4>
+    </div>
+</div>
+<div class="row mx-0 mb-2 mb-lg-0">
+    <div class="col-12 px-0 best-seller-type-container similar-products-container">
+        <div class="row" *ngIf="productList && !loading">
+            <div *ngFor="let item of productList">
+                <div class="col-12 px-0 list-card-item h-100" *ngIf="item.WeedId" (click)="goToUrl(item)">
+                    <a href="{{generateUrl(item)}}">
+                        <div class="list-cards-featured-container" *ngIf="item.IsFeatured">
+                            <span class="lbl-card-featured">Featured</span>
+                        </div>
+                        <div class="list-cards-item-container">
+                            <div class="list-cards-item-image">
+                                <div class="list-cards-item-image-item details-cards-item-image-item">
+                                    <img [src]="getUrl(item.ImageUrl)" />
+                                </div>
+                            </div>
+                            <div class="list-cards-item-content">
+                                <h4 class="ell ellipsys-item font-12 mb-0">{{item.BrandName}}</h4>
+                                <h4 class="ell ellipsys-item font-20 line-height-13 mb-1">{{item.Name}}</h4>
+                                <p class="lblParagraphGeneral font-300 font-10 campton-family ell ellipsys-item mb-0 letter-spacing-0 mb-2 pb-1"
+                                    title="THC: {{getThc(item)}}&nbsp;&bull;&nbsp;CBD: {{getCbd(item)}}&nbsp;&bull;&nbsp;Terpenes: {{getTotalTerpenes(item)}}">
+                                    THC: {{getThc(item)}}
+                                    &nbsp;&bull;&nbsp;
+                                    CBD: {{getCbd(item)}}
+                                    &nbsp;&bull;&nbsp;
+                                    Terpenes: {{getTotalTerpenes(item)}}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="selectedWeedId">
+            <app-producer-gr-product-data [selectedWeedId]="selectedWeedId" [selectedProvinceId]="provinceId"
+                [userId]="userId">
+            </app-producer-gr-product-data>
+        </div>
+    </div>
+</div>
+<div *ngIf="loading">
+    <p-progressBar *ngIf="loading" mode="indeterminate" [style]="{'height': '6px', 'margin-top': '10px'}">
+    </p-progressBar>
+</div>

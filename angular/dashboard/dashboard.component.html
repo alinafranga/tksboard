@@ -1,0 +1,36 @@
+<div class="row mx-0 header-pages-badge white-bgr pt-5 pb-4 mt-2">
+    <div class="container">
+        <div class="row mx-0 verticle-align-items">
+            <div class="col-12 col-lg-9 px-0 mb-3 mb-lg-0">
+                <h2 class="inner-heading my-list-main-header mb-3" *ngIf="!producerId">Dashboard <span
+                        class="campton-family">&gt;</span>
+                </h2>
+                <h3 *ngIf="selectedProvince && selectedProvince.value != '-1'"
+                    class="my-list-address-header campton-family">{{selectedProvince?.label}}</h3>
+                <h3 *ngIf="!selectedProvince || selectedProvince.value == '-1'"
+                    class="my-list-address-header campton-family">All Provinces</h3>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 text-left text-lg-right px-0 mt-2 mt-lg-0">
+                <p-dropdown [options]="provinceList"
+                    class="full-width-multiselect custom-ddl-filter custom-ddl-dashboard custom-location-ddl"
+                    [(ngModel)]="selectedProvinceId" placeholder="All Provinces" [group]="false"
+                    (onChange)="onProvinceChange($event)">
+                    <ng-template let-group pTemplate="item">
+                        <span>{{group.label}}</span>
+                    </ng-template>
+                </p-dropdown>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mx-0 mb-4 white-bgr">
+    <div class="container">
+        <app-producer-gr-overview *ngIf="!loading" [showEverything]="showEverything" [provinceId]="selectedProvinceId"
+            [userId]="currentUserId">
+        </app-producer-gr-overview>
+    </div>
+    <div class="container">
+        <p-progressBar *ngIf="loading" mode="indeterminate" [style]="{'height': '6px', 'margin-top': '10px'}">
+        </p-progressBar>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\obj\Debug\net5.0\AnalyticsDAL.csproj.AssemblyReference.cache
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\obj\Debug\net5.0\AnalyticsDAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\obj\Debug\net5.0\AnalyticsDAL.AssemblyInfoInputs.cache
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\obj\Debug\net5.0\AnalyticsDAL.AssemblyInfo.cs
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\obj\Debug\net5.0\AnalyticsDAL.csproj.CoreCompileInputs.cache
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\bin\Debug\net5.0\AnalyticsDAL.deps.json
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\bin\Debug\net5.0\AnalyticsDAL.runtimeconfig.json
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\bin\Debug\net5.0\AnalyticsDAL.runtimeconfig.dev.json
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\bin\Debug\net5.0\AnalyticsDAL.dll
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\bin\Debug\net5.0\ref\AnalyticsDAL.dll
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\bin\Debug\net5.0\AnalyticsDAL.pdb
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\bin\Debug\net5.0\AnalyticsDomain.dll
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\bin\Debug\net5.0\AnalyticsDomain.pdb
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\obj\Debug\net5.0\AnalyticsDAL.dll
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\obj\Debug\net5.0\ref\AnalyticsDAL.dll
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\obj\Debug\net5.0\AnalyticsDAL.pdb
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\obj\Debug\net5.0\AnalyticsDAL.genruntimeconfig.cache

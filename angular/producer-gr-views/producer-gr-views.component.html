@@ -1,0 +1,50 @@
+<div class="row mx-0 mb-3 mb-lg-4 pb-lg-2">
+    <div class="col-12 px-0">
+        <div class="dashboard-graphic-container">
+            <div class="row mx-0 verticle-align-items mb-4">
+                <div class="col-12 col-md-8 px-0">
+                    <h4 class="dashboard-graphic-heading campton-family">VIEWS <label
+                            [ngClass]="tooltipDeviceStatus ? 'closeTabletTooltip' : ''"
+                            (click)="clickTooltipMobileShow()"
+                            pTooltip="The number of times a retailer visited the product details page for one your products on Producer Connect over the selected time period. Each View is weighted by the retailer’s number of store locations at the time of the interaction."
+                            tooltipPosition="top"></label></h4>
+                </div>
+                <div class="col-12 col-md-4 px-0 text-left text-md-right">
+                    <p *ngIf="time != '0/0'" class="font-10 semibold lblParagraphGeneral mb-0">
+                        {{dateSelected}}
+                        <span class="float-right font-12 font-300 campton-family lblGreyFeatured ml-1">vs. previous
+                            month</span>
+                        <label *ngIf="viewsDifference < 0 || viewsDifference > 0"
+                            [ngClass]="viewsDifference >= 0 ? 'lblPositiveDifference' : 'lblNegativeDifference'"
+                            class="lblDashboardDifferenceMonth ml-1">{{viewsDifference | number : '1.0-0'}}%</label>
+                        <label *ngIf="viewsDifference == 0"
+                            [ngClass]="viewsDifference >= 0 ? 'lblPositiveDifference' : 'lblNegativeDifference'"
+                            class="lblDashboardDifferenceMonth ml-1"><b class="font-14 float-left marg-t-1 semibold">&infin;</b>%</label>
+                    </p>
+                    <p *ngIf="time == '0/0'" class="font-10 semibold lblParagraphGeneral mb-0">
+                        {{dateSelected}}
+                    </p>
+                </div>
+            </div>
+            <div class="row mx-0 verticle-align-items tooltip-row-mobile show-only-mobile"
+                [ngClass]="tooltipDeviceStatus ? '' : 'hideOverTablet'">
+                <div class="col-1 pl-0 pr-3 text-right">
+                    <img src="../../../assets/images/info-icon-dashboard-green.svg" />
+                </div>
+                <div class="col-11 pl-3 pr-0 tooltip-mobile-right-column">
+                    <p class="font-300 font-14 campton-family">The number of times a retailer visited the product
+                        details page for one your products on Producer Connect over the selected time period. Each View
+                        is weighted by the retailer’s number of store locations at the time of the interaction.</p>
+                </div>
+            </div>
+            <div class="row mx-0">
+                <div class="col-12 px-0">
+                    <p-chart *ngIf="!loading" type="line" [data]="basicData" [options]="basicOptions"></p-chart>
+                    <p-progressBar *ngIf="loading" mode="indeterminate"
+                        [style]="{'height': '6px', 'margin-top': '10px'}">
+                    </p-progressBar>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

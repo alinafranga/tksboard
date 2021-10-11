@@ -1,0 +1,92 @@
+<div class="row mx-0">
+    <div class="col-12 col-md-7 col-lg-5 col-xl-3 container px-3 px-lg-0 px-xl-0">
+        <div class="formContainer my-4 my-lg-5 my-xl-5">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="col-12 header-form px-2 px-lg-4 px-xl-4 py-2 py-lg-3 py-xl-3">
+                    <h2 class="text-center text-lg-left text-xl-left">Request an Account</h2>
+                </div>
+                <div class="col-12 account-area-form px-2 px-lg-4 px-xl-4 py-3">
+                    <p>I want to request an account as:</p>
+                    <input class="input-type-radio" type="radio" value="1" id="producerRadio" formControlName="userTypeId"
+                        [(ngModel)]="producer.UserTypeId">
+                    <label class="mr-4" for="producerRadio">Producer</label>
+                    <input class="input-type-radio" type="radio" value="2" id="retailerRadio" formControlName="userTypeId"
+                        [(ngModel)]="producer.UserTypeId">
+                    <label for="retailerRadio">Retailer</label>
+                    <div class="col-12 mt-2 px-0 clearfix error-form" *ngIf="isFieldValid('userTypeId')">
+                        <span class="text-danger">Account Type is required.</span>
+                    </div>
+                </div>
+                <div class="col-12 form-item px-2 px-lg-4 px-xl-4 py-2 mt-2 mt-lg-4 mt-xl-4">
+                    <p>Your name:</p>
+                    <input class="txtBoxGeneral" type="text" placeholder="Type in your full name" formControlName="name"
+                        [(ngModel)]="producer.Name" maxlength="200" />
+                    <div class="col-12 mt-2 px-0 clearfix error-form" *ngIf="isFieldValid('name')">
+                        <span class="text-danger">Full Name is required.</span>
+                    </div>
+                </div>
+                <div class="col-12 form-item px-2 px-lg-4 px-xl-4 py-2">
+                    <p>Phone Number:</p>
+                    <input class="txtBoxGeneral" [mask]="phoneMask.mask(this.registerForm.get('phone'))" type="tel"
+                        placeholder="Type in your phone number" formControlName="phone" [(ngModel)]="producer.PhoneNumber" />
+                    <div class="col-12 mt-2 px-0 clearfix error-form" *ngIf="isFieldValid('phone')">
+                        <span class="text-danger">Phone Number is required.</span>
+                    </div>
+                </div>
+                <div class="col-12 form-item px-2 px-lg-4 px-xl-4 py-2">
+                    <p>Email Address:</p>
+                    <input class="txtBoxGeneral" type="email" placeholder="Type in your email address" formControlName="email"
+                        [(ngModel)]="producer.EmailAddress" maxlength="500" />
+                    <div class="col-12 mt-2 px-0 clearfix error-form" *ngIf="isFieldValid('email')">
+                        <span *ngIf="registerForm.get('email').errors?.required" class="text-danger">Email Address is
+                            required.</span>
+                        <span *ngIf="registerForm.get('email').errors?.pattern" class="text-danger">Please provide a valid email
+                            address</span>
+                    </div>
+                    <div class="col-12 mt-2 px-0 clearfix error-form" *ngIf="registerForm.get('email').errors?.checkEmail">
+                        <span class="text-danger">Email Address already exists.</span>
+                    </div>
+                </div>
+                <div class="col-12 form-item px-2 px-lg-4 px-xl-4 py-2">
+                    <p>Company Name:</p>
+                    <input class="txtBoxGeneral" type="text" placeholder="Type in your company name" formControlName="company"
+                        [(ngModel)]="producer.CompanyName"  maxlength="200"/>
+                    <div class="col-12 mt-2 px-0 clearfix error-form" *ngIf="isCompanyRequiredValid()">
+                        <span class="text-danger">Company Name is required.</span>
+                    </div>
+                    <div class="col-12 mt-2 px-0 clearfix error-form" *ngIf="this.producer.UserTypeId != this.userType.Retailer && registerForm.get('company')?.errors?.checkCompanyName">
+                        <span class="text-danger">Company Name already exists.</span>
+                    </div>
+                    <div class="col-12 mt-2 px-0 clearfix error-form" *ngIf="this.producer.UserTypeId == this.userType.Retailer && registerForm.get('company')?.errors?.checkCompanyName">
+                        <span class="text-danger">This company/brand name already exists on Producer Connect.</span>
+                    </div>
+                </div>
+                <div class="col-12 form-item px-2 px-lg-4 px-xl-4 py-2" *ngIf="producer.UserTypeId == 2">
+                    <p>Brand Name (if different from Company Name):</p>
+                    <input class="txtBoxGeneral" type="text" placeholder="Type in your brand name" formControlName="brand"
+                        [(ngModel)]="producer.BrandName" maxlength="200" />
+                    <div class="col-12 mt-2 px-0 clearfix error-form" *ngIf="registerForm.get('brand')?.errors?.checkBrandName">
+                        <span class="text-danger">Brand Name already exists.</span>
+                    </div>
+                </div>
+                <div class="col-12 form-item px-2 px-lg-4 px-xl-4 py-2">
+                    <p>License Number:</p>
+                    <input class="txtBoxGeneral" maxlength="200" type="text" placeholder="Type in your company’s license number"
+                        formControlName="license" [(ngModel)]="producer.LicenseNumber" />
+                    <div class="col-12 mt-2 px-0 clearfix error-form" *ngIf="isFieldValid('license')">
+                        <span class="text-danger">License Number is required.</span>
+                    </div>
+                </div>
+                <div class="col-12 px-2 px-lg-4 px-xl-4 pt-2 pb-2 pb-lg-3 pb-xl-3 text-center">
+                    <button class="btnDark full-width-mobile" [disabled]="showBar" type="submit">Request an Account</button>
+                </div>
+                <div class="col-12 px-2 px-lg-4 px-xl-4 pb-3 pb-lg-4 pb-xl-4 text-center form-validation-messages">
+                    <p-progressBar *ngIf="showBar" mode="indeterminate" [style]="{'height': '6px'}"></p-progressBar>
+                    <span class="text-success" *ngIf="goodServer">Your account was created and the administrator will check your
+                        information.</span>
+                    <span class="text-danger" *ngIf="errorServer">Error creating your account. Please try again later.</span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

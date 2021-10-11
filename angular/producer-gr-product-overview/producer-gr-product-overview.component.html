@@ -1,0 +1,113 @@
+<div class="row mb-3 mb-md-5 pb-md-4 dashboard-header-cards-producer dashboard-header-cards-mobile-tooltip-container">
+    <div class="col-12 col-md-6 col-lg-3 mb-3 mb-xl-0">
+        <div class="dashboard-header-card dashboard-header-card-impressions">
+            <p>IMPRESSIONS <label [ngClass]="tooltipDeviceImpressions ? 'closeTabletTooltip' : ''"
+                    (click)="clickTooltipMobileShowImpressions()"
+                    pTooltip="The total number of impressions that were registered by retailers on Producer Connect on your products in the selected time period.  Each Impression is weighted by the retailer’s number of store locations at the time of the interaction."
+                    tooltipPosition="top"></label></p>
+            <div class="row mx-0 verticle-align-items tooltip-row-mobile show-only-mobile"
+                [ngClass]="tooltipDeviceImpressions ? '' : 'hideOverTablet'">
+                <div class="col-2 pl-0 pr-3 text-right">
+                    <img src="../../../assets/images/info-icon-dashboard-green.svg" />
+                </div>
+                <div class="col-10 pl-3 pr-0 tooltip-mobile-right-column">
+                    <p class="font-300 font-14 campton-family">The total number of impressions that were registered by
+                        retailers on Producer Connect on your products in the selected time period. Each Impression is
+                        weighted by the retailer’s number of store locations at the time of the interaction.</p>
+                </div>
+            </div>
+            <span><i><img src="../../../assets/images/trending-up.svg" /></i>{{impressions}}<label
+                    [ngClass]="impressionsDifference >= 0 ? 'lblPositiveDifference' : 'lblNegativeDifference'">{{impressionsDifference
+                    | number : '1.0-0'}}%</label></span>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3 mb-3 mb-xl-0">
+        <div class="dashboard-header-card dashboard-header-card-views">
+            <p>VIEWS <label [ngClass]="tooltipDeviceStatusViews ? 'closeTabletTooltip' : ''"
+                    (click)="clickTooltipMobileShowViews()"
+                    pTooltip="The total number of times a retailer visited the product details page for one your products on Producer Connect in the selected time period.  Each View is weighted by the retailer’s number of store locations at the time of the interaction."
+                    tooltipPosition="top"></label></p>
+            <div class="row mx-0 verticle-align-items tooltip-row-mobile show-only-mobile"
+                [ngClass]="tooltipDeviceStatusViews ? '' : 'hideOverTablet'">
+                <div class="col-2 pl-0 pr-3 text-right">
+                    <img src="../../../assets/images/info-icon-dashboard-green.svg" />
+                </div>
+                <div class="col-10 pl-3 pr-0 tooltip-mobile-right-column">
+                    <p class="font-300 font-14 campton-family">The total number of times a retailer visited the product
+                        details page for one your products on Producer Connect in the selected time period. Each View is
+                        weighted by the retailer’s number of store locations at the time of the interaction.</p>
+                </div>
+            </div>
+            <span><i><img src="../../../assets/images/eye-sharp.svg" /></i>{{views}}<label
+                    [ngClass]="viewsDifference >= 0 ? 'lblPositiveDifference' : 'lblNegativeDifference'">{{viewsDifference
+                    | number : '1.0-0'}}%</label></span>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3 mb-3 mb-xl-0">
+        <div class="dashboard-header-card dashboard-header-card-lists">
+            <p>LISTS <label [ngClass]="tooltipDeviceStatusLists ? 'closeTabletTooltip' : ''"
+                    (click)="clickTooltipMobileShowLists()"
+                    pTooltip="Each time one of your products is added to a list belonging to a retailer on Producer Connect this counts as a List Add.  Each List Add is weighted by the retailer’s number of store locations at the time of the interaction.  The value we display for Lists Is the total number of List Adds on all of your products at the end of the selected time period."
+                    tooltipPosition="top"></label></p>
+            <div class="row mx-0 verticle-align-items tooltip-row-mobile show-only-mobile"
+                [ngClass]="tooltipDeviceStatusLists ? '' : 'hideOverTablet'">
+                <div class="col-2 pl-0 pr-3 text-right">
+                    <img src="../../../assets/images/info-icon-dashboard-green.svg" />
+                </div>
+                <div class="col-10 pl-3 pr-0 tooltip-mobile-right-column">
+                    <p class="font-300 font-14 campton-family">Each time one of your products is added to a list
+                        belonging to a retailer on Producer Connect this counts as a List Add. Each List Add is weighted
+                        by the retailer’s number of store locations at the time of the interaction. The value we display
+                        for Lists Is the total number of List Adds on all of your products at the end of the selected
+                        time period.</p>
+                </div>
+            </div>
+            <span><i><img src="../../../assets/images/list-sharp.svg" /></i>{{list}}<label
+                    [ngClass]="listDifference >= 0 ? 'lblPositiveDifference' : 'lblNegativeDifference'">{{listDifference
+                    | number : '1.0-0'}}%</label></span>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3 mb-3 mb-md-0">
+        <div class="dashboard-header-card dashboard-header-card-follows">
+            <p>Total Follows <label [ngClass]="tooltipDeviceStatusFollows ? 'closeTabletTooltip' : ''"
+                    (click)="clickTooltipMobileShowFollows()"
+                    pTooltip="Follows refers to the number of retailers that are following any number of your products on Producer Connect, and hence getting product notifications regarding these products (New Batch updates, Price Update notifications).  Each Follow is weighted by the retailer’s number of store locations in the selected time period.  The value we display for Total Follows is the total number of Follows at the end of the selected time period."
+                    tooltipPosition="top"></label></p>
+            <div class="row mx-0 verticle-align-items tooltip-row-mobile show-only-mobile"
+                [ngClass]="tooltipDeviceStatusFollows ? '' : 'hideOverTablet'">
+                <div class="col-2 pl-0 pr-3 text-right">
+                    <img src="../../../assets/images/info-icon-dashboard-green.svg" />
+                </div>
+                <div class="col-10 pl-3 pr-0 tooltip-mobile-right-column">
+                    <p class="font-300 font-14 campton-family">Follows refers to the number of retailers that are
+                        following any number of your products on Producer Connect, and hence getting product
+                        notifications regarding these products (New Batch updates, Price Update notifications). Each
+                        Follow is weighted by the retailer’s number of store locations in the selected time period. The
+                        value we display for Total Follows is the total number of Follows at the end of the selected
+                        time period.</p>
+                </div>
+            </div>
+            <span><i><img src="../../../assets/images/heart-sharp.svg" /></i>{{follow}}<label
+                    class="lblPositiveDifference">{{followDifference | number : '1.0-0'}}%</label></span>
+        </div>
+    </div>
+    <!-- <div class="col-12 col-md-4 col-xl-2dot4">
+        <div class="dashboard-header-card dashboard-header-card-notification">
+            <p>Notifications<br /> Served <label
+                    [ngClass]="tooltipDeviceStatusNotifications ? 'closeTabletTooltip' : ''"
+                    (click)="clickTooltipMobileShowNotifications()" pTooltip="Total number of Notifications Served."
+                    tooltipPosition="top"></label></p>
+            <div class="row mx-0 verticle-align-items tooltip-row-mobile show-only-mobile"
+                [ngClass]="tooltipDeviceStatusNotifications ? '' : 'hideOverTablet'">
+                <div class="col-2 pl-0 pr-3 text-right">
+                    <img src="../../../assets/images/info-icon-dashboard-green.svg" />
+                </div>
+                <div class="col-10 pl-3 pr-0 tooltip-mobile-right-column">
+                    <p class="font-300 font-14 campton-family">Total number of Notifications Served.</p>
+                </div>
+            </div>
+            <span><i><img src="../../../assets/images/notifications-sharp.svg" /></i>{{list}}<label
+                    class="lblNegativeDifference">{{listDifference | number : '1.2-2'}}%</label></span>
+        </div>
+    </div> -->
+</div>

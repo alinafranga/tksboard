@@ -1,0 +1,12 @@
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\bin\Release\net5.0\AnalyticsDomain.deps.json
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\bin\Release\net5.0\AnalyticsDomain.dll
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\bin\Release\net5.0\ref\AnalyticsDomain.dll
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\bin\Release\net5.0\AnalyticsDomain.pdb
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\obj\Release\net5.0\AnalyticsDomain.csproj.AssemblyReference.cache
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\obj\Release\net5.0\AnalyticsDomain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\obj\Release\net5.0\AnalyticsDomain.AssemblyInfoInputs.cache
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\obj\Release\net5.0\AnalyticsDomain.AssemblyInfo.cs
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\obj\Release\net5.0\AnalyticsDomain.csproj.CoreCompileInputs.cache
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\obj\Release\net5.0\AnalyticsDomain.dll
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\obj\Release\net5.0\ref\AnalyticsDomain.dll
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDomain\obj\Release\net5.0\AnalyticsDomain.pdb

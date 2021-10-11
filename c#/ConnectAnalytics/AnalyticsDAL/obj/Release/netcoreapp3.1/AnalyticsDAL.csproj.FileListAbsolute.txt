@@ -1,0 +1,16 @@
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\bin\Release\netcoreapp3.1\AnalyticsDAL.deps.json
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\bin\Release\netcoreapp3.1\AnalyticsDAL.runtimeconfig.json
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\bin\Release\netcoreapp3.1\AnalyticsDAL.runtimeconfig.dev.json
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\bin\Release\netcoreapp3.1\AnalyticsDAL.dll
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\bin\Release\netcoreapp3.1\AnalyticsDAL.pdb
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\obj\Release\netcoreapp3.1\AnalyticsDAL.AssemblyInfoInputs.cache
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\obj\Release\netcoreapp3.1\AnalyticsDAL.AssemblyInfo.cs
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\obj\Release\netcoreapp3.1\AnalyticsDAL.csproj.CoreCompileInputs.cache
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\obj\Release\netcoreapp3.1\AnalyticsDAL.dll
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\obj\Release\netcoreapp3.1\AnalyticsDAL.pdb
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\obj\Release\netcoreapp3.1\AnalyticsDAL.genruntimeconfig.cache
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\bin\Release\netcoreapp3.1\AnalyticsDomain.dll
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\bin\Release\netcoreapp3.1\AnalyticsDomain.pdb
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\obj\Release\netcoreapp3.1\AnalyticsDAL.csproj.CopyComplete
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\obj\Release\netcoreapp3.1\AnalyticsDAL.csproj.AssemblyReference.cache
+C:\Projects\Cannametrics\ConnectAnalytics\AnalyticsDAL\obj\Release\netcoreapp3.1\AnalyticsDAL.GeneratedMSBuildEditorConfig.editorconfig
